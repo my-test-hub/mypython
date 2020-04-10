@@ -1,0 +1,46 @@
+Read the excel data using xlrd module
+
+Example
+#
+
+Python xlrd library is to extract data from Microsoft Excel (tm) spreadsheet files.
+
+Installation:-
+
+pip install xlrd
+
+Or you can use setup.py file from pypi
+
+https://pypi.python.org/pypi/xlrd
+
+Reading an excel sheet:- Import xlrd module and open excel file using open_workbook() method.
+
+import xlrd
+book=xlrd.open_workbook('sample.xlsx')
+
+Check number of sheets in the excel
+
+print book.nsheets
+
+Print the sheet names
+
+print book.sheet_names()
+
+Get the sheet based on index
+
+sheet=book.sheet_by_index(1)
+
+Read the contents of a cell
+
+cell = sheet.cell(row,col) #where row=row number and col=column number
+print cell.value #to print the cell contents
+
+Get number of rows and number of columns in an excel sheet
+
+num_rows=sheet.nrows
+num_col=sheet.ncols
+
+Get excel sheet by name
+
+sheets = book.sheet_names()
+cur_sheet = book.sheet_by_name(sheets[0])
